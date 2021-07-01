@@ -1,0 +1,77 @@
+<div class="container">
+
+    <div *ngIf="loading" class="alert alert-primary" role="alert">
+      Employee updatet!
+    </div>
+  
+    <div *ngIf="error" class="alert alert-danger" role="alert">
+      Error by updating the Employee !
+    </div>
+  
+      <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value)">
+  
+        <div class="form-group row">
+          <label for="department" class="col-4 col-form-label">Department</label> 
+          <div class="col-8">
+            <input ngModel id="department" name="department" type="text" required="required" class="form-control" value="{{employee.department}}">
+          </div>
+        </div>
+    <div class="form-group row">
+      <label for="firstname" class="col-4 col-form-label">Firstname</label> 
+      <div class="col-8">
+        <input ngModel id="firstname" name="firstname" type="text" required="required" class="form-control" value="{{employee.firstname}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="lastname" class="col-4 col-form-label">Lastname</label> 
+      <div class="col-8">
+        <input ngModel id="lastname" name="lastname" type="text" required="required" class="form-control" value="{{employee.lastName}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="gender" class="col-4 col-form-label">Gender</label> 
+      <div class="col-8">
+        <select ngModel id="gender" name="gender" class="custom-select" required="required" value="{{employee.gender}}">
+          <option value="MALE">Male</option>
+          <option value="FEMALE">Female</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="date" class="col-4 col-form-label">Birthdate</label> 
+      <div class="col-8">
+        <input ngModel id="date" name="date" type="date" required="required" class="form-control" value="{{employee.birthday}}" readonly>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="street" class="col-4 col-form-label">Street</label> 
+      <div class="col-8">
+        <input ngModel id="street" name="street" type="text" required="required" class="form-control" value="{{employee.street}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="streetNumber" class="col-4 col-form-label">StreetNo</label> 
+      <div class="col-8">
+        <input ngModel id="streetNumber" name="streetNumber" type="text" class="form-control" required="required" value="{{employee.streetNo}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="country" class="col-4 col-form-label">Country</label> 
+      <div class="col-8">
+        <input ngModel id="country" name="country" type="text" class="form-control" required="required" value="{{employee.country}}">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="telephone" class="col-4 col-form-label">Telephone</label> 
+      <div class="col-8">
+        <input ngModel id="telephone" name="telephone" type="text" class="form-control" required="required" value="{{employee.telephone}}">
+      </div>
+    </div> 
+    <div class="form-group row">
+      <div class="offset-4 col-8">
+        <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+      </form>
+  
+  </div>

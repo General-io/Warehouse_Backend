@@ -1,0 +1,29 @@
+<div class="container">
+
+    <input type="text" [(ngModel)]="searchValue" class="search form-control" placeholder="What you looking for?">
+    <br>
+<table id="myTable" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">SKU</th>
+        <th scope="col">Brand</th>
+        <th scope="col">Category</th>
+        <th scope="col">Model</th>
+        <th scope="col">Quantity</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let archive of archives | searchfilterArchive:searchValue">
+        <th scope="row">{{archive.id}}</th>
+        <td>{{archive.skuCode}}</td>
+        <td>{{archive.brand}}</td>
+        <td>{{archive.category}}</td>
+        <td>{{archive.model}}</td>
+        <td>{{archive.quantity}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

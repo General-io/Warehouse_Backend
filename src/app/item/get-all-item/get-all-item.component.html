@@ -1,0 +1,50 @@
+<div class="container">
+
+        <input type="text" [(ngModel)]="searchValue" class="search form-control" placeholder="What you looking for?">
+        <br>
+    <table id="myTable" class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">SKU</th>
+            <th scope="col">Brand</th>
+            <th scope="col">Category</th>
+            <th scope="col">Model</th>
+            <th scope="col">Racknr.</th>
+            <th scope="col">Floornr.</th>
+            <th scope="col">Placenr.</th>
+            <th scope="col">Condition</th>
+            <th scope="col">Quantity</th>
+            <th scope="col" >Delete</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items | searchfilterItem:searchValue">
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.skuCode}}</td>
+            <td>{{item.brand}}</td>
+            <td>{{item.category}}</td>
+            <td>{{item.model}}</td>
+            <td>R-{{item.storageRack}}</td>
+            <td>F-{{item.floorNumber}}</td>
+            <td>P-{{item.placeNumber}}</td>
+            <td>{{item.productCondition}}-Grade</td>
+            <td>
+              <form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value, item.id)">
+                <div class="float-child">
+                <input ngModel id="quantity" name="quantity" type="text" required="required" class="form-control" placeholder="{{item.quantity}}" style="width: 100%;">
+                </div>
+                <div>
+                <button type="submit" name="submit" class="btn btn-primary">OK</button>                
+                </div>
+            </form>
+            </td>
+            <td style="width: 30%;">
+              <button type="button" (click)="deleteById(item.id)" class="btn btn-danger" >Delete</button>
+          </td>
+          </tr>
+        </tbody>
+      </table>
+
+</div>

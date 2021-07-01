@@ -1,0 +1,46 @@
+<div class="container">
+    <input type="text" [(ngModel)]="searchValue" class="search form-control" placeholder="What you looking for?">
+    <br>
+<table id="myTable" class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">EmployeeID</th>
+        <th scope="col">Department</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Birthday</th>
+        <th scope="col">Age</th>
+        <th scope="col">Address</th>
+        <th scope="col">Nationality</th>
+        <th scope="col">Telephone</th>
+        <th scope="col">Delete</th>
+        <th scope="col">Update</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees | searchfilter:searchValue">
+        <th scope="row">{{employee.id}}</th>
+        <td>{{employee.employeeId}}</td>
+        <td>{{employee.department}}</td>
+        <td>{{employee.firstname}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.birthday}}</td>
+        <td>{{employee.age}}</td>
+        <td>{{employee.street}} {{employee.streetNo}}</td>
+        <td>{{employee.country}}</td>
+        <td>{{employee.telephone}}</td>
+        <td>
+            <button type="button" (click)="deleteById(employee.id)" class="btn btn-danger">Delete</button>
+        </td>
+        <td>
+            <a routerLink="/update-employee"><button type="button" (click)="updateEmployee(employee.id)" class="btn btn-warning">Update</button></a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+</div>

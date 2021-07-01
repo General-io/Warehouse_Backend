@@ -1,0 +1,35 @@
+<div class="container">
+
+    <h1>Search Item by Id</h1>
+
+    <br>
+
+    <input #phone class="col-4 col-form-label"/>
+    &nbsp;
+    <button class="btn btn-primary" (click)="onSubmit(phone.value)">Find By ID</button>
+
+    <br>
+    <br>
+
+    <div *ngIf="exists">
+        <div class="card border border-primary shadow-0">
+            <div class="card-body">
+              <h5 class="card-title">{{item.productName}}</h5>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item liitem"><strong>Id:</strong>
+                    <span class="pull-right"> {{item.id}}</span>
+                </li>
+                <li class="list-group-item liitem"><strong>SKU Code:</strong>
+                    <span class="pull-right"> {{item.skuCode}}</span>
+                </li>
+                <li class="list-group-item liitem"><strong>Quantity: </strong>
+                    <span class="pull-right"> {{item.quantity}}</span>
+                </li>
+            </ul>
+          
+            </div>
+            <div class="card-footer">2 days ago</div>
+          </div>
+          <br>
+    </div>
+</div>

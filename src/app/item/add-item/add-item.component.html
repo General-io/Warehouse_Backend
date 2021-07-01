@@ -1,0 +1,121 @@
+<div class="container">
+
+  <div *ngIf="loading" class="alert alert-primary" role="alert">
+    Item created!
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger" role="alert">
+    Error by creating the item !
+  </div>
+
+<form #myForm="ngForm" (ngSubmit)="onSubmitTemplateBased(myForm.value)">
+
+  <div class="form-group row">
+    <label for="skuCode" class="col-4 col-form-label">SKU Code</label> 
+    <div class="col-8">
+      <input ngModel id="skuCode" name="skuCode" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="brand" class="col-4 col-form-label">Brand</label> 
+    <div class="col-8">
+      <input ngModel id="brand" name="brand" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="model" class="col-4 col-form-label">Model</label> 
+    <div class="col-8">
+      <input ngModel id="model" name="model" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="category" class="col-4 col-form-label">Category</label> 
+    <div class="col-8">
+      <select ngModel id="category" name="category" class="custom-select" required="required">
+        <option value="Washing machine">Washing machine</option>
+        <option value="Washer-dryer">Washer-dryer</option>
+        <option value="Tumble dryer">Tumble dryer</option>
+        <option value="Refrigerator">Refrigerator</option>
+        <option value="Freezer">Freezer</option>
+        <option value="Dishwasher">Dishwasher</option>
+        <option value="Stove set">Stove set</option>
+        <option value="Oven">Oven</option>
+        <option value="Hob">Hob</option>
+        <option value="Extractor hood">Extractor hood</option>
+        <option value="Air conditioners">Air conditioners</option>
+        <option value="Smar Tv’s">Smar Tv’s</option>
+        <option value="Kitchen">Kitchen</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="storageRack" class="col-4 col-form-label">Storage Rack</label> 
+    <div class="col-8">
+      <select ngModel id="storageRack" name="storageRack" class="custom-select" required="required">
+        <option value="1">R-1</option>
+        <option value="2">R-2</option>
+        <option value="3">R-3</option>
+        <option value="4">R-4</option>
+        <option value="5">R-5</option>
+        <option value="6">R-6</option>
+        <option value="7">R-7</option>
+        <option value="8">R-8</option>
+        <option value="9">R-9</option>
+        <option value="10">R-10</option>
+        <option value="11">R-11</option>
+        <option value="12">R-12</option>
+        <option value="13">R-13</option>
+        <option value="14">R-14</option>
+        <option value="15">R-15</option>
+        <option value="16">R-16</option>
+        <option value="17">R-17</option>
+        <option value="18">R-18</option>
+        <option value="19">R-19</option>
+        <option value="20">R-20</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="floorNumber" class="col-4 col-form-label">Floor Number</label> 
+    <div class="col-8">
+      <select ngModel id="floorNumber" name="floorNumber" class="custom-select" required="required">
+        <option value="1">E-1</option>
+        <option value="2">E-2</option>
+        <option value="3">E-3</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="placeNumber" class="col-4 col-form-label">Place Number</label> 
+    <div class="col-8">
+      <select ngModel id="placeNumber" name="placeNumber" class="custom-select" required="required">
+        <option value="1">P-1</option>
+        <option value="2">P-2</option>
+        <option value="3">P-3</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="quantity" class="col-4 col-form-label">Quantity</label> 
+    <div class="col-8">
+      <input ngModel id="quantity" name="quantity" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="condition" class="col-4 col-form-label">Condition</label> 
+    <div class="col-8">
+      <select ngModel id="condition" name="condition" class="custom-select" required="required">
+        <option value="A">A-Grade</option>
+        <option value="B">B-Grade</option>
+        <option value="C">C-Grade</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+    </form>
+</div>

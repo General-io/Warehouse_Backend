@@ -1,0 +1,51 @@
+<div class="container">
+
+    <h1>Search Employee by Id</h1>
+
+    <br>
+
+    <input #phone class="col-4 col-form-label"/>
+    &nbsp;
+    <button class="btn btn-primary" (click)="onSubmit(phone.value)">Find By ID</button>
+
+    <br>
+    <br>
+
+    <div *ngIf="exists">
+    <div class="card border border-primary shadow-0">
+        <div class="card-body">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item liitem"><strong>Id:</strong>
+                <span class="pull-right"> {{employee.id}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Firstname:</strong>
+                <span class="pull-right"> {{employee.firstname}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Lastname:</strong>
+                <span class="pull-right"> {{employee.lastName}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>EmployeeId:</strong>
+                <span class="pull-right"> {{employee.employeeId}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Gender:</strong>
+                <span class="pull-right"> {{employee.gender}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Age:</strong>
+                <span class="pull-right"> {{employee.age}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Birthday:</strong>
+                <span class="pull-right">{{employee.birthday}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Street:</strong>
+                <span class="pull-right"> {{employee.street}} {{employee.streetNo}}</span>
+            </li>
+            <li class="list-group-item liitem"><strong>Country:</strong>
+                <span class="pull-right">{{employee.country}}</span>
+            </li>
+        </ul>
+      
+        </div>
+      </div>
+      <br>
+    </div>
+</div>
